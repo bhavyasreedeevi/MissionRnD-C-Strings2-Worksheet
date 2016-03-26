@@ -21,6 +21,25 @@ NOTES: Don't create new string , Dont return anything ,you have been given two p
 
 
 void count_vowels_and_consonants(char *str,int *consonants, int *vowels){
+	if (str == NULL)
+	{
+		*consonants = 0;
+		*vowels = 0;
+	}
+	else
+	{
+		int i;
+		*consonants = 0;
+		*vowels = 0;
+		for (i = 0; str[i] != '\0'; i++)
+		{
 
+			if (str[i] == 'a' || str[i] == 'A' || str[i] == 'e' || str[i] == 'E' || str[i] == 'i' || str[i] == 'I' || str[i] == 'o' || str[i] == 'O' || str[i] == 'u' || str[i] == 'U')
+				*vowels+=1;
+			else if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
+				*consonants+=1;
+
+		}
+	}
 
 }
